@@ -1,13 +1,13 @@
-import { ScreenContent } from 'components/ScreenContent';
-import { StatusBar } from 'expo-status-bar';
-
+import { NavigationContainer, DefaultTheme, DarkTheme } from '@react-navigation/native';
+import TabNavigator from './src/navigation/TabNavigator';
+import { useColorScheme } from 'react-native';
 import './global.css';
 
 export default function App() {
+  const scheme = useColorScheme();
   return (
-    <>
-      <ScreenContent title="Home" path="App.tsx"></ScreenContent>
-      <StatusBar style="auto" />
-    </>
+    <NavigationContainer theme={scheme === 'dark' ? DarkTheme : DefaultTheme}>
+      <TabNavigator />
+    </NavigationContainer>
   );
 }
