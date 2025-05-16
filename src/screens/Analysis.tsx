@@ -1,13 +1,13 @@
-import { useColorScheme } from 'nativewind';
+import { useTheme } from '@react-navigation/native';
 import { Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function Analysis() {
-  const scheme = useColorScheme();
+  const { colors } = useTheme();
   return (
-    <SafeAreaView className="flex-1 bg-white dark:bg-black">
+    <SafeAreaView className="flex-1 " style={{ backgroundColor: colors.background }}>
       <View>
-        <Text>Analysis Screen</Text>
+        <Text style={{ color: colors.text, fontSize: 24 }}>Analysis Screen</Text>
       </View>
     </SafeAreaView>
   );

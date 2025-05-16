@@ -7,7 +7,6 @@ import { MyDarkTheme, MyLightTheme } from '~/themes';
 
 export default function App() {
   const colorScheme = useColorScheme();
-  console.log(colorScheme);
   return (
     <SafeAreaProvider>
       <NavigationContainer theme={colorScheme === 'dark' ? MyDarkTheme : MyLightTheme}>
