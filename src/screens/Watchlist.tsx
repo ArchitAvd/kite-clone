@@ -2,6 +2,7 @@ import { useTheme } from '@react-navigation/native';
 import { View, Text } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { FontAwesome5 } from '@expo/vector-icons';
+import MyTabView from '~/components/TabView';
 
 export default function Watchlist() {
   const { colors } = useTheme();
@@ -27,7 +28,9 @@ export default function Watchlist() {
         </View>
       </View>
 
-      <View></View>
+      <View style={{ flex: 1 }}>
+        <MyTabView />
+      </View>
     </SafeAreaView>
   );
 }
