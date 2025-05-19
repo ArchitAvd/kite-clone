@@ -7,19 +7,22 @@ import MyTabView from '~/components/TabView';
 export default function Watchlist() {
   const { colors } = useTheme();
   return (
-    <SafeAreaView className="flex-1" style={{ backgroundColor: colors.background }}>
+    <SafeAreaView
+      className="flex-1"
+      style={{ backgroundColor: colors.background }}
+      edges={['right', 'left', 'top']}>
       <View className="flex-row">
         <View className="items-center " style={{ flexBasis: '45%' }}>
           <Text style={{ color: colors.text, fontWeight: 'bold' }}>NIFTY 50</Text>
           <Text>
-            <Text className="text-red-600">88888.88 </Text>
+            <Text style={{ color: (colors as any).positive }}>88888.88 </Text>
             <Text className="ml-1 text-gray-500"> -888.88(-88.88%)</Text>
           </Text>
         </View>
         <View className="items-center " style={{ flexBasis: '45%' }}>
           <Text style={{ color: colors.text, fontWeight: 'bold' }}>NIFTY BANK</Text>
           <Text>
-            <Text className="text-red-600">88888.88 </Text>
+            <Text style={{color: (colors as any).negative}}>88888.88 </Text>
             <Text className="ml-1 text-gray-500"> -888.88(-88.88%)</Text>
           </Text>
         </View>
