@@ -1,21 +1,16 @@
 import { useTheme } from '@react-navigation/native';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Animated, View, TouchableOpacity, StyleSheet, Dimensions, ScrollView } from 'react-native';
-import { TabView, SceneMap, SceneRendererProps, NavigationState } from 'react-native-tab-view';
+import { TabView, SceneMap, SceneRendererProps } from 'react-native-tab-view';
 import TabRouteView from './TabRouteView';
 
-export default function MyTabView() {
+export default function PortfolioTabView() {
   const { colors } = useTheme();
 
   const [index, setIndex] = useState(0);
   const [routes] = useState([
-    { key: 'first', title: 'Watchlist 1' },
-    { key: 'second', title: 'Watchlist 2' },
-    { key: 'third', title: 'Watchlist 3' },
-    { key: 'fourth', title: 'Watchlist 4' },
-    { key: 'fifth', title: 'Watchlist 5' },
-    { key: 'sixth', title: 'Watchlist 6' },
-    { key: 'seventh', title: 'Watchlist 7' },
+    { key: 'holdings', title: 'Holdings' },
+    { key: 'positions', title: 'Positions' },
   ]);
 
   const renderTabBar = (
@@ -51,13 +46,8 @@ export default function MyTabView() {
   );
 
   const renderScene = SceneMap({
-    first: () => <TabRouteView initialData={['ABCD']} backgroundColor="#ff4081" title="First" />,
-    second: () => <TabRouteView initialData={[]} backgroundColor="#673ab7" title="Second" />,
-    third: () => <TabRouteView initialData={[]} backgroundColor="#009688" title="Third" />,
-    fourth: () => <TabRouteView initialData={[]} backgroundColor="#3f51b5" title="Fourth" />,
-    fifth: () => <TabRouteView initialData={[]} backgroundColor="#c2185b" title="Fifth" />,
-    sixth: () => <TabRouteView initialData={[]} backgroundColor="#e91e63" title="Sixth" />,
-    seventh: () => <TabRouteView initialData={[]} backgroundColor="#ff9800" title="Seventh" />,
+    holdings: () => <TabRouteView backgroundColor="#ff4081" title="Holdings" />,
+    positions: () => <TabRouteView backgroundColor="#673ab7" title="Positions" />,
   });
 
   return (
