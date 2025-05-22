@@ -87,9 +87,8 @@ export function useWatchlists() {
 
   const createTab = useCallback(
     (tabName: string) => {
-      if (watchlists[tabName]) return; // already exists
+      if (watchlists[tabName]) return;
       setWatchlists((prev) => ({ ...prev, [tabName]: [] }));
-      setActiveTab(tabName);
     },
     [watchlists]
   );

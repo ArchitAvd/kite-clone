@@ -20,7 +20,7 @@ export const MyDarkTheme = {
   colors: {
     ...DarkTheme.colors,
     primary: '#0246f2',
-    background: '#121212',
+    background: '#000000',
     card: '#1e1e1e',
     positive: '#32fa05',
     negative: '#fa0905',

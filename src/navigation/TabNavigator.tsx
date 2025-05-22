@@ -15,7 +15,7 @@ export default function TabNavigator() {
     <Tab.Navigator
       screenOptions={{
         headerShown: false,
-        tabBarStyle: { backgroundColor: colors.card },
+        tabBarStyle: { backgroundColor: colors.background },
         tabBarActiveTintColor: colors.primary,
         tabBarInactiveTintColor: colors.text,
       }}>
@@ -42,7 +42,7 @@ export default function TabNavigator() {
         component={Portfolio}
         options={{
           tabBarIcon: ({ color, size }) => (
-            <FontAwesome5 name="briefcase" size={size} color={color} />
+            <FontAwesome5 name="suitcase" size={size} color={color} />
           ),
         }}
       />
