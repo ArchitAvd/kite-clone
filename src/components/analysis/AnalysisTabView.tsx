@@ -2,7 +2,7 @@ import { useTheme } from '@react-navigation/native';
 import { useState } from 'react';
 import { Animated, View, TouchableOpacity, StyleSheet, Dimensions, ScrollView } from 'react-native';
 import { TabView, SceneMap, SceneRendererProps } from 'react-native-tab-view';
-import TabRouteView from './TabRouteView';
+import AnalysisRouteView from './AnalysisRouteView';
 
 export default function AnalysisTabView() {
   const { colors } = useTheme();
@@ -43,7 +43,7 @@ export default function AnalysisTabView() {
   );
 
   const renderScene = SceneMap({
-    first: () => <TabRouteView backgroundColor="#ff4081" title="Analysis" />,
+    first: () => <AnalysisRouteView />,
   });
 
   return (

@@ -2,7 +2,8 @@ import { useTheme } from '@react-navigation/native';
 import { useState } from 'react';
 import { Animated, View, TouchableOpacity, StyleSheet, Dimensions, ScrollView } from 'react-native';
 import { TabView, SceneMap, SceneRendererProps } from 'react-native-tab-view';
-import TabRouteView from './TabRouteView';
+import HoldingsRouteView from './HoldingsRouteView';
+import PositionsRouteView from './PositionsRouteView';
 
 export default function PortfolioTabView() {
   const { colors } = useTheme();
@@ -46,8 +47,8 @@ export default function PortfolioTabView() {
   );
 
   const renderScene = SceneMap({
-    holdings: () => <TabRouteView backgroundColor="#ff4081" title="Holdings" />,
-    positions: () => <TabRouteView backgroundColor="#673ab7" title="Positions" />,
+    holdings: () => <HoldingsRouteView />,
+    positions: () => <PositionsRouteView />,
   });
 
   return (

@@ -2,7 +2,11 @@ import { useTheme } from '@react-navigation/native';
 import { useState } from 'react';
 import { Animated, View, TouchableOpacity, StyleSheet, Dimensions, ScrollView } from 'react-native';
 import { TabView, SceneMap, SceneRendererProps } from 'react-native-tab-view';
-import TabRouteView from './TabRouteView';
+import OpenRouteView from './OpenRouteView';
+import ExecutedRouteView from './ExecutedRouteView';
+import GTTRouteView from './GTTRouteView';
+import BasketsRouteView from './BasketsRouteView';
+import SIPsRouteView from './SIPsRouteView';
 
 export default function OrderTabView() {
   const { colors } = useTheme();
@@ -49,11 +53,11 @@ export default function OrderTabView() {
   );
 
   const renderScene = SceneMap({
-    open: () => <TabRouteView backgroundColor="#ff4081" title="Open" />,
-    executed: () => <TabRouteView backgroundColor="#673ab7" title="Executed" />,
-    gtt: () => <TabRouteView backgroundColor="#009688" title="GTT" />,
-    baskets: () => <TabRouteView backgroundColor="#3f51b5" title="Baskets" />,
-    sips: () => <TabRouteView backgroundColor="#c2185b" title="SIPs" />,
+    open: () => <OpenRouteView />,
+    executed: () => <ExecutedRouteView />,
+    gtt: () => <GTTRouteView />,
+    baskets: () => <BasketsRouteView />,
+    sips: () => <SIPsRouteView />,
   });
 
   return (
